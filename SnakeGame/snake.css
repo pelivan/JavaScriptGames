@@ -1,0 +1,12 @@
+body{
+    background-image: url('../Assets/background.jpg');
+    background-color: #cccccc;
+}
+
+canvas { 
+	position:absolute; 
+    top:0;bottom:0;right:0;left:0; 
+    margin:auto; 
+    border: 10px double #8f8;
+    
+} 
