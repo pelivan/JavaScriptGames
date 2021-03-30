@@ -1,5 +1,16 @@
+//reload after loding!!!
+window.onload = function() {
+
+    if(!window.location.hash) {
+
+        window.location = window.location + '#loaded';
+
+        window.location.reload();
+    }
+}
 const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
+
 
 //load var
 
@@ -32,7 +43,7 @@ gameover.src = "Assets/sounds/gameover.mp3"
 
 //const
 
-var gap = 340;
+var gap = 100;
 var constant = pipeNorth.height + gap;
 
 var bX = 10;
@@ -55,6 +66,10 @@ var pipe = [];
 pipe[0] = {
     x : 100,
     y : 0
+}
+
+function restartGame(){
+    location.reload();
 }
 
 
@@ -82,6 +97,8 @@ function draw(){
         if(bX +bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY + bird.height >=
             pipe[i].y+constant)){
                 gameover.play();
+                clearInterval(game);
+                setTimeout('restartGame()',2000)
             }
     }
 
