@@ -60,7 +60,7 @@ pipe[0] = {
 //restart
 
 function restartGame(){
-    window.location.reload();
+    location.reload();
 }
 
 //draw
