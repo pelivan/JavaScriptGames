@@ -57,11 +57,7 @@ pipe[0] = {
     y : 0
 }
 
-//restart
 
-function restartGame(){
-    location.reload();
-}
 
 //draw
 
@@ -86,8 +82,6 @@ function draw(){
         if(bX +bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY + bird.height >=
             pipe[i].y+constant)){
                 gameover.play();
-                clearInterval(game);
-                setTimeout('restartGame()',2000)
             }
     }
 
